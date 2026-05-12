@@ -3,7 +3,7 @@ import re
 import tkinter as tk
 from tkinter import ttk
 
-# ── skill alias map ───────────────────────────────────────────
+
 skill_map = {
     "python":"python","pyhton":"python","java":"java","javascript":"javascript",
     "javascrpit":"javascript","js":"javascript","typescript":"typescript",
@@ -58,7 +58,7 @@ job_data = [
      "JavaScript, React, Vue, TypeScript, REST API, HTML/CSS, Node.js, GraphQL, Redux, Jest, AWS"),
 ]
 
-# ── core logic ────────────────────────────────────────────────
+
 def clean_skills(raw_text):
     tokens = re.split(r',\s*', raw_text.strip())
     already_added = set()
@@ -123,7 +123,7 @@ def run_matching():
         all_results.append((jd_id, jd_label, scores))
     return all_results
 
-# ── helpers ───────────────────────────────────────────────────
+
 BG      = "#f4f6f9"
 DARK    = "#1a1a2e"
 BLUE    = "#4a90d9"
@@ -157,7 +157,7 @@ def card(parent, padx=24, pady=6):
     f.pack(fill="x", padx=padx, pady=pady)
     return f
 
-# ── TAB 1: How it works ───────────────────────────────────────
+
 def build_how_it_works(parent):
     outer, inner = scrollable_frame(parent)
 
@@ -203,7 +203,7 @@ def build_how_it_works(parent):
 
     outer.pack(fill="both", expand=True)
 
-# ── TAB 2: Normalized Skills ──────────────────────────────────
+
 def build_skills_tab(parent):
     outer, inner = scrollable_frame(parent)
     section_label(inner, "Candidate Skills — After Normalization & Deduplication")
@@ -232,7 +232,7 @@ def build_skills_tab(parent):
 
     outer.pack(fill="both", expand=True)
 
-# ── TAB 3: IDF Values ────────────────────────────────────────
+
 def build_idf_tab(parent):
     outer, inner = scrollable_frame(parent)
     section_label(inner, "IDF Values — Skill Rarity Across All Resumes")
@@ -272,7 +272,7 @@ def build_idf_tab(parent):
 
     outer.pack(fill="both", expand=True)
 
-# ── TAB 4: Results ───────────────────────────────────────────
+
 def build_results_tab(parent):
     outer, inner = scrollable_frame(parent)
     section_label(inner, "Matching Results — Cosine Similarity Scores")
@@ -280,14 +280,14 @@ def build_results_tab(parent):
     results = run_matching()
 
     for jd_id, jd_label, scores in results:
-        # JD header card
+       
         hdr_card = card(inner, pady=8)
         top_bar = tk.Frame(hdr_card, bg=DARK)
         top_bar.pack(fill="x")
         tk.Label(top_bar, text=f"  {jd_id}  —  {jd_label}",
                  font=("Arial", 11, "bold"), bg=DARK, fg=WHITE).pack(side="left", pady=8)
 
-        # score rows
+        
         max_score = scores[0][1] if scores[0][1] > 0 else 1
         for i, (name, score) in enumerate(scores):
             is_top = i < 3
@@ -322,7 +322,7 @@ def build_results_tab(parent):
 
     outer.pack(fill="both", expand=True)
 
-# ── MAIN WINDOW ───────────────────────────────────────────────
+
 def main():
     root = tk.Tk()
     root.title("Resume Matching Engine — Redrob AI Campus Hackathon")
@@ -337,7 +337,7 @@ def main():
     tk.Label(title_bar, text="TF-IDF Cosine Similarity  ·  10 Candidates  ·  3 Job Descriptions",
              font=("Arial", 9), bg=DARK, fg="#aab").pack()
 
-    # notebook tabs
+    
     style = ttk.Style()
     style.theme_use("clam")
     style.configure("TNotebook",        background=DARK, borderwidth=0)
