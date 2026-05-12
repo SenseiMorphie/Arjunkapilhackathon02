@@ -1,162 +1,180 @@
-🚀 Resume Matching Engine
-AI-Powered Candidate Ranking System
-<div align="center">
+# 🚀 Resume Matching Engine
 
+### AI-Powered Candidate Ranking System
 
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge\&logo=python)
+![Tkinter](https://img.shields.io/badge/GUI-Tkinter-green?style=for-the-badge)
+![TF-IDF](https://img.shields.io/badge/Algorithm-TF--IDF-orange?style=for-the-badge)
+![Cosine Similarity](https://img.shields.io/badge/Matching-Cosine%20Similarity-red?style=for-the-badge)
 
+---
 
+# 📌 Overview
 
-
-
-
-</div>
-📌 Overview
-
-This project is a Resume Matching Engine built for the Redrob AI Campus Hackathon.
+This project is a **Resume Matching Engine** built for the **Redrob AI Campus Hackathon**.
 
 The system intelligently matches resumes with job descriptions using:
 
-✅ Skill Normalization
-✅ TF-IDF Vectorization
-✅ Cosine Similarity
-✅ Candidate Ranking
-✅ Interactive Tkinter GUI
+* ✅ Skill Normalization
+* ✅ TF-IDF Vectorization
+* ✅ Cosine Similarity
+* ✅ Candidate Ranking
+* ✅ Interactive Tkinter GUI
 
-The engine processes resumes, cleans inconsistent skill names, computes similarity scores, and ranks candidates based on relevance to job descriptions.
+---
 
-🖥️ Features
-✨ Core Features
-🔍 Resume-to-JD Matching
-🧠 TF-IDF Based Scoring
-📊 Cosine Similarity Ranking
-🧹 Skill Cleaning & Deduplication
-🏆 Top Candidate Highlighting
-📈 Skill Rarity Analysis
-🎨 Modern GUI with Tkinter
-⚡ Pure Python Implementation
-🏗️ System Architecture
-                ┌──────────────────┐
-                │ Raw Resume Skills │
-                └────────┬─────────┘
-                         │
-                         ▼
-                ┌──────────────────┐
-                │ Skill Cleaning & │
-                │ Normalization    │
-                └────────┬─────────┘
-                         │
-                         ▼
-                ┌──────────────────┐
-                │ TF-IDF Vector    │
-                │ Generation       │
-                └────────┬─────────┘
-                         │
-                         ▼
-                ┌──────────────────┐
-                │ Job Description  │
-                │ Vectorization    │
-                └────────┬─────────┘
-                         │
-                         ▼
-                ┌──────────────────┐
-                │ Cosine Similarity│
-                │ Calculation      │
-                └────────┬─────────┘
-                         │
-                         ▼
-                ┌──────────────────┐
-                │ Candidate Ranking│
-                └──────────────────┘
-🧠 Matching Algorithm
-TF-IDF Formula
+# ✨ Features
 
-TF-IDF=TF×IDF
+* 🔍 Resume-to-JD Matching
+* 🧠 TF-IDF Based Scoring
+* 📊 Cosine Similarity Ranking
+* 🧹 Skill Cleaning & Deduplication
+* 🏆 Top Candidate Highlighting
+* 📈 Skill Rarity Analysis
+* 🎨 Interactive GUI
+* ⚡ Pure Python Implementation
+
+---
+
+# 🏗️ System Architecture
+
+```text
+Raw Resume Skills
+        ↓
+Skill Cleaning & Normalization
+        ↓
+TF-IDF Vector Generation
+        ↓
+Job Description Vectorization
+        ↓
+Cosine Similarity Calculation
+        ↓
+Candidate Ranking
+```
+
+---
+
+# 🧠 Matching Formula
+
+## TF-IDF
+
+```text
+TF-IDF = TF × IDF
+```
 
 Where:
 
+```text
 TF  = Term Frequency
 IDF = Inverse Document Frequency
-Cosine Similarity
+```
 
-cos(θ)=
-∥A∥∥B∥
-A⋅B
-	​
+---
 
+## Cosine Similarity
 
-Higher cosine score ⇒ Better candidate match.
+```text
+Cosine(A, B) = (A · B) / (||A|| × ||B||)
+```
 
-🧹 Skill Normalization
+Higher cosine score = Better candidate match.
 
-The engine automatically fixes:
+---
 
-Raw Skill	Normalized Skill
-Pyhton	python
-Reacts	react
-kubernates	kubernetes
-data-viz	data_visualization
+# 🧹 Skill Normalization
 
-This ensures consistent matching across resumes and job descriptions.
+The engine automatically fixes typos and aliases.
 
-📊 GUI Tabs
-📖 How It Works
+| Raw Skill  | Normalized Skill   |
+| ---------- | ------------------ |
+| Pyhton     | python             |
+| Reacts     | react              |
+| kubernates | kubernetes         |
+| data-viz   | data_visualization |
 
-Explains the complete matching pipeline.
+---
 
-🧹 Normalized Skills
+# 📊 GUI Tabs
 
-Displays cleaned and processed candidate skills.
+| Tab                  | Purpose                        |
+| -------------------- | ------------------------------ |
+| 📖 How It Works      | Explains the complete pipeline |
+| 🧹 Normalized Skills | Shows cleaned skills           |
+| 📈 IDF Values        | Displays skill rarity          |
+| 🏆 Results           | Shows ranked candidates        |
 
-📈 IDF Values
+---
 
-Shows skill rarity and importance scores.
+# 📂 Project Structure
 
-🏆 Results
-
-Displays ranked candidates with similarity scores.
-
-📂 Project Structure
+```bash
 Resume-Matching-Engine/
 │
 ├── main.py
 ├── README.md
-⚙️ Installation
-1️⃣ Clone Repository
+```
+
+---
+
+# ⚙️ Installation
+
+## Clone Repository
+
+```bash
 git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-2️⃣ Move Into Project Directory
+```
+
+## Move Into Directory
+
+```bash
 cd YOUR_REPO
-3️⃣ Run Application
+```
+
+## Run Project
+
+```bash
 python main.py
-🛠️ Built With
-Technology	Purpose
-Python	Core Logic
-Tkinter	GUI
-Regex	Skill Cleaning
-Math Module	TF-IDF & Similarity
-📌 Sample Job Roles
-🤖 ML Engineer
-⚙️ Backend Engineer
-🎨 Frontend Engineer
-🎯 Key Concepts Used
-Information Retrieval
-Vector Space Models
-NLP Preprocessing
-TF-IDF
-Cosine Similarity
-Ranking Systems
-GUI Development
-🚀 Future Improvements
-📄 PDF Resume Parsing
-🌐 Web Deployment
-🤖 AI-Based Semantic Search
-🧠 NLP Skill Extraction
-🗄️ Database Integration
-📊 Analytics Dashboard
-👨‍💻 Author
-Arjun Kapil
+```
 
-Built for the Redrob AI Campus Hackathon.
+---
 
-⭐ If You Like This Project
+# 🛠️ Built With
 
-Give it a ⭐ on GitHub
+| Technology  | Purpose                |
+| ----------- | ---------------------- |
+| Python      | Core Logic             |
+| Tkinter     | GUI                    |
+| Regex       | Skill Cleaning         |
+| Math Module | Similarity Calculation |
+
+---
+
+# 📌 Sample Job Roles
+
+* 🤖 ML Engineer
+* ⚙️ Backend Engineer
+* 🎨 Frontend Engineer
+
+---
+
+# 🚀 Future Improvements
+
+* 📄 PDF Resume Parsing
+* 🌐 Web Deployment
+* 🤖 NLP Semantic Matching
+* 🗄️ Database Integration
+* 📊 Analytics Dashboard
+
+---
+
+# 👨‍💻 Author
+
+## Arjun Kapil
+
+Built for the **Redrob AI Campus Hackathon**
+
+---
+
+# ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub.
